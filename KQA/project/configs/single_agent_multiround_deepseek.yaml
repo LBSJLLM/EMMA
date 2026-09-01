@@ -1,0 +1,42 @@
+qa_mode: single_agent_multiround
+max_rounds: 5
+top_k_per_query: 5
+top_k_per_level: 5
+evidence_dedup_threshold: 0.85
+video_fallback_window_expand_seconds: 5
+stop_if_no_new_evidence_rounds: 2
+enabled_memory_levels:
+  - MTM
+  - STM
+use_llm_for_question_type: true
+use_llm_for_validation: true
+use_llm_for_answer: true
+use_video_fallback: true
+results_root: /root/results
+embed_model: text-embedding-3-large
+llm_model: deepseek-chat
+answer_llm_model: ark-deepseek-r1-250528
+llm_temperature: 0.0
+openai_api_key: ""
+openai_base_url: ""
+
+llm_global_rate_limit_qps: 0
+llm_global_max_concurrency: 0
+llm_rate_limit_qps: 0
+llm_max_concurrency: 1
+llm_max_retries: 4
+llm_retry_backoff_seconds: 2.0
+llm_request_timeout_seconds: 600
+
+vlm_checkpoint: /root/models/Qwen3-VL-8B-Instruct
+raw_video_root: /root/dataset/videomme/videos
+raw_video_extensions:
+  - .mp4
+  - .mkv
+  - .mov
+  - .avi
+  - .webm
+  - .m4v
+
+embed_api_key: ""
+embed_base_url: ""

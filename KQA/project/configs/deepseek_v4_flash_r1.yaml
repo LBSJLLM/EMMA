@@ -1,0 +1,50 @@
+# Public reference configuration for the strongest reported pipeline.
+# Credentials and provider URLs are intentionally empty: set the environment
+# variables documented in the repository README before running.
+qa_mode: single_agent_multiround
+max_rounds: 5
+top_k_per_query: 5
+top_k_per_level: 5
+evidence_dedup_threshold: 0.85
+max_evidence_pool_items: 40
+video_fallback_window_expand_seconds: 5
+enabled_memory_levels:
+  - MTM
+  - STM
+use_video_fallback: true
+
+# MMM-F-derived retrieval control policy.
+validation_require_stm_or_raw: true
+stop_if_no_new_evidence_rounds: 2
+escalate_on_insufficient_streak: true
+final_fallback_mtm_items: 15
+final_fallback_stm_items: 25
+
+# DeepSeek-V4-Flash plans retrieval and validates evidence.  R1 makes the final
+# multiple-choice decision from the selected evidence pool.
+llm_model: deepseek-v4-flash
+answer_llm_model: ark-deepseek-r1-250528
+llm_temperature: 0.0
+openai_api_key: ""
+openai_base_url: ""
+llm_max_concurrency: 1
+llm_max_retries: 4
+llm_retry_backoff_seconds: 2.0
+llm_request_timeout_seconds: 600
+
+# Retrieval uses an OpenAI-compatible text embedding endpoint.
+embed_model: text-embedding-3-large
+embed_api_key: ""
+embed_base_url: ""
+
+# Local visual fallback model.
+vlm_checkpoint: /root/models/Qwen3-VL-8B-Instruct
+results_root: /path/to/memory-results
+raw_video_root: /path/to/videos
+raw_video_extensions:
+  - .mp4
+  - .mkv
+  - .mov
+  - .avi
+  - .webm
+  - .m4v

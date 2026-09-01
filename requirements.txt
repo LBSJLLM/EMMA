@@ -1,0 +1,12 @@
+# Install a compatible PyTorch build first, following https://pytorch.org.
+
+transformers>=4.57,<5
+vllm>=0.15,<1
+faster-whisper>=1.1,<2
+ctranslate2>=4.5,<5
+decord>=0.6,<1
+openai>=2.24,<3
+numpy>=2.2,<3
+PyYAML>=6,<7
+
+# System dependency: ffmpeg (for audio and clip extraction).

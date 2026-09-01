@@ -1,0 +1,32 @@
+__pycache__/
+*.pyc
+*.pyo
+KQA/project/outputs/
+*.log
+
+# Local config — never commit
+memory/.env
+KQA/project/.env
+.env
+.env.*
+!.env.example
+results/
+
+# Generated artifacts and editor caches are not part of a source release.
+qa_results/
+memory/logs/
+QA/.ipynb_checkpoints/
+KQA/project/outputs/
+KQA/memory_locomo/data/
+
+# Machine-local models, datasets, and release artifacts.
+models/
+data/
+datasets/
+*.mp4
+*.mkv
+*.mov
+*.avi
+*.webm
+*.tar.gz
+memory/kernel_meta/
